@@ -12,13 +12,11 @@ class KiloConverter:
 
         #create 2 frame widgets
         self.top_frame = tk.Frame(self.main_window)
+        
         self.mid_frame = tk.Frame(self.main_window)
+
         self.bottom_frame = tk.Frame(self.main_window)
 
-        #create widgets for a middle frame
-        self.desc_label = tk.Label(self.main_window, text='Converted to miles: ')
-        self.miles_var = tk.StringVar()
-        self.miles_label = tk.Label(self.main_window,textvariable=self.miles_var).pack()
 
         #create 3 label widgets for the top frame
         self.prompt = tk.Label(self.top_frame, text="Enter distance in Kms: ")
@@ -27,6 +25,11 @@ class KiloConverter:
         #pack our labels
         self.prompt.pack(side='left')
         self.kilo_entry.pack(side='left')
+
+                #create widgets for a middle frame
+        self.desc_label = tk.Label(self.mid_frame, text='Converted to miles: ').pack(side='left')
+        self.miles_var = tk.StringVar()
+        self.miles_label = tk.Label(self.mid_frame,textvariable=self.miles_var).pack(side='left')
 
         
         #create two button widgets 
@@ -37,7 +40,9 @@ class KiloConverter:
         self.quitbutton.pack(side='right')
 
         self.top_frame.pack()
+        
         self.mid_frame.pack()
+
         self.bottom_frame.pack()
     
         tk.mainloop()
