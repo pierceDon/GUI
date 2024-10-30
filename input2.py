@@ -51,9 +51,9 @@ class KiloConverter:
         kilo = float(self.kilo_entry.get())
         miles = round(kilo * 0.6214, 2)
 
-        self.miles_var.set(miles)
+        #self.miles_var.set(miles)
 
-        #tk.messagebox.showinfo('Response',str(kilo) + ' kilometers is equal to ' + str(miles) + ' miles.')
+        tk.messagebox.showinfo('Response',str(kilo) + ' kilometers is equal to ' + str(miles) + ' miles.')
 
 #create an instance of the class
 my_gui = KiloConverter()
