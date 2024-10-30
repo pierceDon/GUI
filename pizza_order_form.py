@@ -7,7 +7,7 @@ class PizzaForm:
         self.main_window = tk.Tk()
 
         #configure the main window
-        self.main_window.geometry('500x300')
+        self.main_window.geometry('500x600')
         self.main_window.title('Pizza Order Form')
 
         #create 2 frame widgets
@@ -30,6 +30,10 @@ class PizzaForm:
         self.name_entry.pack(side='left')
         self.address_label.pack(side='left')
         self.address_entry.pack(side='left')
+
+        self.sauce_label = tk.Label(self.mid_frame, text="Choose your sauce:").pack()
+        self.select = tk.StringVar()
+        self.sauce_menu = tk.OptionMenu(self.mid_frame, self.select, 'Tomato','Alfredo','Pesto').pack()
 
 #create an IntVar to use with radio buttons
         self.size_var = tk.IntVar()
@@ -80,17 +84,17 @@ class PizzaForm:
         #create two radio button widgets 
         self.receive_var = tk.IntVar()
 
-        self.rb4 = tk.Radiobutton(self.mid_frame,
+        self.rb4 = tk.Radiobutton(self.bottom_frame,
                                   text='Pickup',
                                   variable=self.receive_var,
                                   value=0)
-        self.rb5 = tk.Radiobutton(self.mid_frame,
+        self.rb5 = tk.Radiobutton(self.bottom_frame,
                                   text='Delivery ($3)',
                                   variable=self.receive_var,
                                   value=3)
         
-        self.rb4.pack(side='left')
-        self.rb5.pack(side='left')
+        self.rb4.pack( )
+        self.rb5.pack()
         
         #create total button
         
